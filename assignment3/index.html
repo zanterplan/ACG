@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PBD Cloth Simulation</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="glCanvas"></canvas>
+    <script src="pbd.js"></script>
+    <script src="renderer.js"></script>
+    <script>
+        window.onload = function() {
+            initSimulation();
+            
+            // Run benchmarks
+            setTimeout(() => {
+                const metrics = simulation.test();
+                console.log("Performance Metrics:", metrics);
+            }, 3000);
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+</body>
+</html>
